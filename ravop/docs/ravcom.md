@@ -21,3 +21,71 @@ Install RavCom
 ##### This step will automatically install the dependencies
     
 ## Usage
+
+Import ravcom
+
+    from ravcom import ravcom
+    
+Reset everything 
+
+    from ravcom import reset
+    reset()    
+    
+Delete and create database
+
+    from ravcom import delete_create_database
+    delete_create_database()
+
+Database Manager can be accessed using
+
+    from ravcom import ravcom
+    
+Create op
+
+    op = ravcom.create_op(**kwargs)
+    
+Get op
+
+    op = ravcom.get_op(id=1)
+    
+Get op by name
+
+    op = ravcom.get_ops_by_name(op_name="x", graph_id=1)
+    Here graph id is optional
+    
+Get op status
+
+    ravcom.get_op_status()
+
+Create graph
+
+    graph = ravcom.create_graph()
+
+Get graph
+
+    graph = ravcom.get_graph(graph_id=1)
+    
+Get graph ops
+
+    graph = ravcom.get_graph_ops(graph_id=1)
+
+Create client
+
+    client = ravcom.create_client(**kwargs)
+    
+Get client
+
+    client = ravcom.get_client(client_id=1)
+    
+Get all ops
+
+    ops = ravcom.get_all_ops()
+    
+Get all graphs
+
+    graphs = ravcom.get_all_graphs()
+    
+Get all clients
+
+    clients = ravcom.get_all_clients()
+    
