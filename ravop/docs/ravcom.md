@@ -14,11 +14,13 @@ Activate the virtual environment
     
     source ravcom/bin/activate
 
+Install Dependencies
+
+    pip install git+https://github.com/ravenprotocol/ravcom.git
+    
 Install RavCom
 
-    pip install https://github.com/ravenprotocol/ravcom.git
-    
-##### This step will automatically install the dependencies
+    python3 setup.py install
     
 ## Usage
 
