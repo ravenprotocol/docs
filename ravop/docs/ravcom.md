@@ -21,6 +21,7 @@ Activate the virtual environment
 Linux
 ```
 sudo apt-get update
+sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
 sudo apt-get install mysql-server
 sudo apt-get install mysql-client
 ```
