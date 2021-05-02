@@ -14,6 +14,11 @@ Activate the virtual environment
     
     source ravcom/bin/activate
 
+### Prequisites
+
+MySQL Server Setup
+
+
 Install Dependencies
 
     pip install git+https://github.com/ravenprotocol/ravcom.git

@@ -23,3 +23,4 @@ Install Dependencies
 Install Ravml
 
     python3 setup.py install
+###### use `python3 setup --help` for argument details
