@@ -16,7 +16,14 @@ Activate the virtual environment
 
 ### Prequisites
 
-MySQL Server Setup
+#### MySQL Server
+
+Linux
+```
+sudo apt-get update
+sudo apt-get install mysql-server
+sudo apt-get install mysql-client
+```
 
 
 Install Dependencies
