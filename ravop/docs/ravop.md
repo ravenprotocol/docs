@@ -8,11 +8,11 @@ Op is the fundamental unit of RDF. RavOp is our library to work with ops. You ca
 
 Create a virtual environment
     
-    virtualenv ravcom -p python3
+    virtualenv ravop -p python3
     
 Activate the virtual environment
     
-    source ravcom/bin/activate
+    source ravop/bin/activate
 
 Install RavOp
 

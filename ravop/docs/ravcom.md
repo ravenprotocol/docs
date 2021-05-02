@@ -14,11 +14,26 @@ Activate the virtual environment
     
     source ravcom/bin/activate
 
+### Prequisites
+
+#### MySQL Server
+
+Linux
+```
+sudo apt-get update
+sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
+sudo apt-get install mysql-server
+sudo apt-get install mysql-client
+```
+
+
+Install Dependencies
+
+    pip install git+https://github.com/ravenprotocol/ravcom.git
+    
 Install RavCom
 
-    pip install https://github.com/ravenprotocol/ravcom.git
-    
-##### This step will automatically install the dependencies
+    python3 setup.py install
     
 ## Usage
 
