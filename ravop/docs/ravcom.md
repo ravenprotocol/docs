@@ -4,6 +4,63 @@ RavCom is a common library that contains various methods to interact with the da
 
 [Github](https://github.com/ravenprotocol/ravcom.git)
 
+## Prequisites
+
+#### MySQL Server
+
+**Linux**
+```
+sudo apt-get update
+sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
+sudo apt-get install mysql-server
+sudo apt-get install mysql-client
+```
+
+**Mac**
+1. Install [homebrew](https://docs.brew.sh/Installation)
+2. Install and start MySQL
+```
+brew update
+brew install mysql
+brew tap homebrew/services
+brew services start mysql
+```
+3. Run CLI wizard to create a root user
+
+    mysql_secure_installation
+
+
+#### Redis DB
+**Linux**
+TBD
+
+**Mac**
+```
+brew update
+brew install redis
+brew services start redis
+```
+
+#### Create MySQL Tables
+**Linux**
+TBD
+
+**Mac**
+1. Login to mysql
+
+    mysql -u root -p your_root_password
+
+2. Create RDF db
+
+    \> CREATE DATABASE rdf;
+
+3. Run one-liner to create setup tables
+
+    RDF_MYSQL_PASSWORD=your_root_password python3 -c "from ravcom import reset; ravcom.reset();"
+
+*TODO: Add to setup.py as a script*
+*TODO: Add .env file for passwords*
+
 ## Installation
 
 Create a virtual environment
@@ -13,25 +70,8 @@ Create a virtual environment
 Activate the virtual environment
     
     source ravcom/bin/activate
-
-### Prequisites
-
-#### MySQL Server
-
-Linux
-```
-sudo apt-get update
-sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
-sudo apt-get install mysql-server
-sudo apt-get install mysql-client
-```
-
-
-Install Dependencies
-
-    pip install git+https://github.com/ravenprotocol/ravcom.git
     
-Install RavCom
+Install ravcom
 
     python3 setup.py install
     
@@ -44,7 +84,7 @@ Import ravcom
 Reset everything 
 
     from ravcom import reset
-    reset()    
+    reset()
     
 Delete and create database
 
