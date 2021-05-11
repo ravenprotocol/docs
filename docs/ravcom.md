@@ -54,7 +54,7 @@ TBD
 
     \> CREATE DATABASE rdf;
 
-3. Run one-liner to create setup tables
+3. Run one-liner to create tables
 
     RDF_MYSQL_PASSWORD=your_root_password python3 -c "from ravcom import reset; ravcom.reset();"
 
