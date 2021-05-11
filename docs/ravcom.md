@@ -17,7 +17,9 @@ sudo apt-get install mysql-client
 ```
 
 **Mac**
+
 1. Install [homebrew](https://docs.brew.sh/Installation)
+
 2. Install and start MySQL
 ```
 brew update
@@ -25,6 +27,7 @@ brew install mysql
 brew tap homebrew/services
 brew services start mysql
 ```
+
 3. Run CLI wizard to create a root user
 
     mysql_secure_installation
@@ -32,6 +35,7 @@ brew services start mysql
 
 #### Redis DB
 **Linux**
+
 TBD
 
 **Mac**
@@ -43,9 +47,11 @@ brew services start redis
 
 #### Create MySQL Tables
 **Linux**
+
 TBD
 
 **Mac**
+
 1. Login to mysql
 
     mysql -u root -p your_root_password
