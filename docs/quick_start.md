@@ -1,9 +1,4 @@
-# Raven Distribution Framework
-
-* [RavCom](ravcom.md)
-* [RavOP](ravop.md)
-* [RavML](ravml.md)
-* [RavSock](ravsock.md)
+# Quick start
 
 Install virtualenv:
     
@@ -16,4 +11,6 @@ Mac
 
     brew install python3
     pip3 install virtualenv
+
+TBD (reference for raven-distribution-framework repo)
     

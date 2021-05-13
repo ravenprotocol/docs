@@ -1,8 +1,11 @@
 site_name: Raven Distribution Framework
 nav:
-    - home: index.md
+    - Introduction: index.md
+    - Quick Start: quick_start.md
     - RavCom: ravcom.md
     - RavOP: ravop.md
-    - RavML: ravml.md
     - RavSock: ravsock.md
+    - RavML: ravml.md
+    - RavJS: ravjs.md
+    - RavViz: ravviz.md
 theme: readthedocs
