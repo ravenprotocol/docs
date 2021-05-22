@@ -63,7 +63,7 @@ TBD
 
 3. Run one-liner to create tables
 
-        RDF_MYSQL_PASSWORD=your_root_password python3 -c "from ravdb import reset; ravdb.reset();"
+        RDF_MYSQL_PASSWORD=your_root_password python3 -c "from ravcom import reset; ravcom.reset();"
 
 *TODO: Add to setup.py as a script*
 *TODO: Add .env file for passwords*
@@ -100,7 +100,7 @@ Delete and create database
 
 Database Manager can be accessed using
 
-    from ravdb import ravdb
+    from ravcom import ravdb
     
 Create op
 
