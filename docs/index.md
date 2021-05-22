@@ -5,13 +5,13 @@ The Raven Distribution Framework (RDF) is a community-developed implementation o
 * **Users:** Create models that need to be trained
 * **Clients:** Provide computational power to train the models
 
-For Users, there are three core libraries that drive the main function for computation distribution ([RavDB](ravdb.md), [RavOP](ravop.md), and [RavSock](ravsock.md)), along with a growing list of libraries that extend the core to be more developer-friendly to use.
+For Users, there are three core libraries that drive the main function for computation distribution ([RavCom](ravcom.md), [RavOP](ravop.md), and [RavSock](ravsock.md)), along with a growing list of libraries that extend the core to be more developer-friendly to use.
 
 For Clients, there is a frontend Javascript library (RavJS) that enables anyone with a browser to contribute processing power. Additional clients are in consideration, such as Go and Rust (looking for community devs!).
 
 ### Core libraries
 
-* [RavDB](ravdb.md): Handles operation distribution and communication with databases.
+* [RavCom](ravcom.md): Handles operation distribution and communication with databases.
 * [RavOP](ravop.md): Core operations models for distributed computation
 * [RavSock](ravsock.md): Socket server for client connections
 

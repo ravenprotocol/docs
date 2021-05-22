@@ -2,7 +2,7 @@ site_name: Raven Distribution Framework
 nav:
     - Introduction: index.md
     - Quick Start: quick_start.md
-    - RavDB: ravdb.md
+    - RavCom: ravcom.md
     - RavOP: ravop.md
     - RavSock: ravsock.md
     - RavML: ravml.md
