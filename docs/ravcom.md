@@ -29,8 +29,9 @@ brew services start mysql
 ```
 
 3. Run CLI wizard to create a root user
-
-    mysql_secure_installation
+```
+mysql_secure_installation
+```
 
 
 #### Redis DB
@@ -54,15 +55,15 @@ TBD
 
 1. Login to mysql
 
-    mysql -u root -p your_root_password
+        mysql -u root -p your_root_password
 
 2. Create RDF db
 
-    \> CREATE DATABASE rdf;
+        > CREATE DATABASE rdf;
 
 3. Run one-liner to create tables
 
-    RDF_MYSQL_PASSWORD=your_root_password python3 -c "from ravcom import reset; ravcom.reset();"
+        RDF_MYSQL_PASSWORD=your_root_password python3 -c "from ravcom import reset; ravcom.reset();"
 
 *TODO: Add to setup.py as a script*
 *TODO: Add .env file for passwords*
@@ -99,54 +100,54 @@ Delete and create database
 
 Database Manager can be accessed using
 
-    from ravcom import ravcom
+    from ravcom import ravdb
     
 Create op
 
-    op = ravcom.create_op(**kwargs)
+    op = ravdb.create_op(**kwargs)
     
 Get op
 
-    op = ravcom.get_op(id=1)
+    op = ravdb.get_op(id=1)
     
 Get op by name
 
-    op = ravcom.get_ops_by_name(op_name="x", graph_id=1)
-    Here graph id is optional
+    op = ravdb.get_ops_by_name(op_name="x", graph_id=1)
+    // Here graph id is optional
     
 Get op status
 
-    ravcom.get_op_status()
+    ravdb.get_op_status()
 
 Create graph
 
-    graph = ravcom.create_graph()
+    graph = ravdb.create_graph()
 
 Get graph
 
-    graph = ravcom.get_graph(graph_id=1)
+    graph = ravdb.get_graph(graph_id=1)
     
 Get graph ops
 
-    graph = ravcom.get_graph_ops(graph_id=1)
+    graph = ravdb.get_graph_ops(graph_id=1)
 
 Create client
 
-    client = ravcom.create_client(**kwargs)
+    client = ravdb.create_client(**kwargs)
     
 Get client
 
-    client = ravcom.get_client(client_id=1)
+    client = ravdb.get_client(client_id=1)
     
 Get all ops
 
-    ops = ravcom.get_all_ops()
+    ops = ravdb.get_all_ops()
     
 Get all graphs
 
-    graphs = ravcom.get_all_graphs()
+    graphs = ravdb.get_all_graphs()
     
 Get all clients
 
-    clients = ravcom.get_all_clients()
+    clients = ravdb.get_all_clients()
     
