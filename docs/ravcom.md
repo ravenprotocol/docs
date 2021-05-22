@@ -72,30 +72,30 @@ TBD
 
 Create a virtual environment
     
-    virtualenv ravdb -p python3
+    virtualenv ravcom -p python3
     
 Activate the virtual environment
     
-    source ravdb/bin/activate
+    source ravcom/bin/activate
     
-Install ravdb
+Install ravcom
 
     python3 setup.py install
     
 ## Usage
 
-Import ravdb
+Import ravdb from ravcom
 
-    from ravdb import ravdb
+    from ravcom import ravdb
     
 Reset everything 
 
-    from ravdb import reset
+    from ravcom import reset
     reset()
     
 Delete and create database
 
-    from ravdb import delete_create_database
+    from ravcom import delete_create_database
     delete_create_database()
 
 Database Manager can be accessed using
