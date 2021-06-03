@@ -47,7 +47,7 @@ You can view a sample implementation of KNN on ravml [here](https://github.com/r
 It's a classification method based on Bayes' Theorem and the assumption of predictor independence. A Naive Bayes classifier, in simple terms, assumes that the existence of one feature in a class is unrelated to the presence of any other feature. The Naive Bayes model is simple to construct and is especially good for huge data sets. Naive Bayes is renowned to outperform even the most advanced classification systems due to its simplicity.
 
 ```python
-from naive_bayes import NaiveBayesClassifier
+from ravml.linear_model.naive_bayes import NaiveBayesClassifier
 
 model = NaiveBayesClassifier()
 
