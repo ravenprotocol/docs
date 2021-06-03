@@ -23,9 +23,11 @@ Install Dependencies
 Install Ravml
 
     python3 setup.py install
-###### use `python3 setup --help` for argument details
+ 
+> **Note :** Use `python3 setup --help` for argument details
 
-## Available Algorithms
+---
+## RavML Supported Algorithms
 
 ### K-Nearest Neighbours
 K-Nearest Neighbors (KNN) is a simple machine learning technique for regression and classification problems. KNN algorithms take data and apply similarity metrics to classify fresh data points (e.g. distance function). A majority vote of its neighbours is used to classify it. The information is assigned to the class with the most neighbours. As the number of nearest neighbours grows, so does the value of k, and so does the accuracy.
@@ -98,11 +100,33 @@ You can view the implementation of Logistic Regression [*here*](https://github.c
 
 The multi-layer perceptron (MLP) is a feed-forward neural network supplement. It has three layers: an input layer, an output layer, and a hidden layer. The input signal to be processed is received by the input layer. The output layer is responsible for tasks such as prediction and categorization. The true computational engine of the MLP is an arbitrary number of hidden layers inserted between the input and output layers. In an MLP, data flows from input to output layer in the forward direction, similar to a feed-forward network. The backpropagation learning algorithm is used to train the neurons in the MLP. MLPs can tackle issues that aren't linearly separable and are designed to approximate any continuous function. Pattern categorization, recognition, prediction, and approximation are some of MLP's most common applications.
 
+```python
+from ravml.linear.perceptron import Perceptron
+
+model = Perceptron(input_dims=4, hidden_dims=10, output_dims=3)
+
+model.fit(X_train, y_train, alpha = 0.01, epoch = 3)
+
+pr = model.predict(X_test[1])
+print('Prediction : ',pr)
+
+model.plot_metrics()      # plots accuracy and loss
+```
 
 You can view the implementation of MLP on IRIS Flower Dataset [*here*](https://github.com/ravenprotocol/ravml/blob/main/ravml/linear/mlp_iris.py).
 
 ### Decision Trees
 
 Decision Tree is a supervised learning technique that may be used to solve both classification and regression problems, however, it is most commonly employed to solve classification issues. Internal nodes represent dataset attributes, branches represent decision rules, and each leaf node provides the conclusion in this tree-structured classifier. The Decision Node and the Leaf Node are the two nodes of a Decision tree. Leaf nodes are the output of those decisions and do not contain any more branches, whereas Decision nodes are used to make any decision and have several branches. The decisions or tests are made based on the characteristics of the given dataset.
+
+```python
+from ravml.tree import DecisionTreeClassifier
+
+obj = DecisionTreeClassifier(max_depth=3)
+obj.fit(X_train[:30], y_train[:30])
+pr = obj.predict(X_test)
+
+print(f1_score(y_test, pr, average='weighted'))
+```
 
 You can view the implementation of Decision Tree [*here*](https://github.com/ravenprotocol/ravml/blob/main/ravml/tree/decision_tree.py).
