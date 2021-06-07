@@ -95,7 +95,7 @@ model = LinearRegression(x,y,theta)
 
 model.compute_cost()  # initial cost with coefficients at zero
 
-optimal_theta = model.gradient_descent(alpha=0.1, iterations=20)
+optimal_theta = model.gradient_descent(alpha=0.01, iterations=20)
 
 model.plot_graph(optimal_theta)
 ```
