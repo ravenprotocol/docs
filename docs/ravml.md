@@ -88,6 +88,18 @@ You can view a sample implementation of K-means on ravml [here](https://github.c
 
 Linear Regression is a supervised machine learning technique with a continuous and constant slope projected output. Rather than aiming to classify data into categories (e.g. cat, dog), it is used to predict values within a continuous range (e.g. sales, price). There are two main types: Simple and Multivariable Regression.
 
+```python
+from ravml.linear.linear_regression import LinearRegression
+
+model = LinearRegression(x,y,theta)
+
+model.compute_cost()  # initial cost with coefficients at zero
+
+optimal_theta = model.gradient_descent(alpha=0.1, iterations=20)
+
+model.plot_graph(optimal_theta)
+```
+
 You can view the implementation of Linear Regression [*here*](https://github.com/ravenprotocol/ravml/blob/main/ravml/linear/linear_regression.py).
 
 ### Logistic Regression
