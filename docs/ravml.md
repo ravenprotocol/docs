@@ -106,7 +106,23 @@ You can view the implementation of Linear Regression [*here*](https://github.com
 
 The Supervised Learning methodology of logistic regression is used to predict the categorical dependent variable using a set of independent factors. A categorical dependent variable's output is predicted using logistic regression. As a result, the result must be a discrete or categorical value. Logistic Regression is much similar to Linear Regression except that how they are used. Linear Regression is used for solving Regression problems, whereas Logistic regression is used for solving the classification problems. 
 
-You can view the implementation of Logistic Regression [*here*](https://github.com/ravenprotocol/ravml/blob/main/ravml/linear/logistic_regression.py).
+```python
+from ravml.linear.logistic_regression import LogisticRegression
+model = LogisticRegression(lr=0.1, num_iter=30)
+
+model.fit(X, y)
+
+preds = model.predict(X)
+
+print((preds == y).mean())
+print(model.theta())
+
+model.plot_loss()
+
+model.visualize(X,y)
+```
+
+You can view the implementation of Logistic Regression on IRIS flower dataset [*here*](https://github.com/ravenprotocol/ravml/tree/main/examples/logistic_regression.py).
 
 ### Multi-Layer Perceptron
 
