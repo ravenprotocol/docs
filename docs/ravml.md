@@ -122,7 +122,7 @@ model.plot_loss()
 model.visualize(X,y)
 ```
 
-You can view the implementation of Logistic Regression on IRIS flower dataset[*here*](https://github.com/ravenprotocol/ravml/tree/main/examples/logistic_regression.py).
+You can view the implementation of Logistic Regression on IRIS flower dataset [*here*](https://github.com/ravenprotocol/ravml/tree/main/examples/logistic_regression.py).
 
 ### Multi-Layer Perceptron
 
