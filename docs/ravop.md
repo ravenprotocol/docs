@@ -895,7 +895,7 @@ print(c.output)
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-**b (ndarray, list) :** condition ,if true choose from a ,else choose from b.
+**condition (ndarray, list(of bool elements)) :** condition ,if true choose from a ,else choose from b.
 
 `Returns:`
 
