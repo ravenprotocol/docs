@@ -4,7 +4,7 @@ RavCom is a common library that contains various methods to interact with the da
 
 [Github](https://github.com/ravenprotocol/ravcom.git)
 
-## Prequisites
+## Prerequisites
 
 #### MySQL Server
 
