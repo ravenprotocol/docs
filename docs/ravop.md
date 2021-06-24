@@ -7,9 +7,12 @@
 Ravop is the Raven Distribution framework’s (RDF) operation library . Ops are a fundamental unit of RDF. Ravop Library contains the main object data types `Tensor` and `Scalar` upon which we can perform the various arithmetic and mathematical operations available in the ravop library in a distributed and decentralized manner . 
 
 
-###Ravop in RDF
+Ravop in RDF
+-
 Ravop is responsible for creation of ops and retrieving ops from ravcom and ravsock. 
-### Setup and Installation
+
+Setup and Installation
+-
 
 Create a virtual environment
     
@@ -24,7 +27,7 @@ Install RavOp
     pip install https://github.com/ravenprotocol/ravop.git
 
 
-### Initializing Tensors , Scalars and Graphs
+Initializing Tensors , Scalars and Graphs
     
 `Tensors`:Raven Tensors are data type objects which are multidimensional arrays
 
@@ -40,7 +43,8 @@ b=R.Scalar(10)
 ```
 
 
-###Example
+Example
+-
 We can use raven ops to operate on these Tensors. Let's consider adding two Tensors .
 Adding two tensors can be achieved using the R.add() operation
 
@@ -85,11 +89,11 @@ c=R.multiply(a,b)
 ```
 
 
-#Arithmetic Ops 
+Arithmetic Ops
+-
 
 Op name |
 |---|
-|lin|
 |add|
 |mul|
 |sub|
@@ -104,22 +108,6 @@ Op name |
 |cube_root|
 |abs|
 
----
-lin
--
-
-```python
-a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
-```
-######Parameters:
-**a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
-
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
-
-######Returns:
-R.Tensor()
 
 ---
 add
@@ -131,225 +119,262 @@ b=R.Tensor([3,4,5])
 c=R.add(a,b)
 print(c.output)
 ```
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
 mul
 -
+**Description:** Returns the elementwise multiplication between two tensors a and b
 
 ```python
-a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+a=R.Tensor([2,2])
+b=R.Tensor([1,2])
+R.mul(a,b)
 ```
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
 sub
 -
+**Description:** Returns the elementwise subtraction between two tensors a and b
 
 ```python
 a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+b=R.Tensor([1,1,1])
+R.sub(a,b)
 ```
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
 pos
 -
+**Description:**
 
 ```python
-a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+a=R.Tensor([1,2,-3])
+R.pos(a,b)
 ```
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
+`Returns:`
 
-######Returns:
 R.Tensor()
 
 ---
 neg
 -
+**Description:** Returns negative value of the tensor
 
 ```python
-a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+a=R.Tensor([1,-2,-3])
+b=R.neg(a)
+print(b.output)
 ```
-######Parameters:
-**a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
+    Output: array([-1,2,3])
+`Parameters:`
 
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
+**a (R.Tensor| Dtype:Ravop Tensor) :** The  input Tensor
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
 exp
 -
+**Description:** Returns exponential of input tensor
 
 ```python
 a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+b=R.exp(a)
+print(b.output)
 ```
-######Parameters:
+
+    Output: array([2.7182817459106445, 7.389056205749512, 20.08553695678711])
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
+`Returns:`
 
-######Returns:
 R.Tensor()
 
 ---
 natlog
 -
+**Description:** Returns natural log of input tensor
 
 ```python
 a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+b=R.natlog(a)
+print(b.output)
 ```
-######Parameters:
+    Output: array([0, 0.6931471824645996, 1.0986123085021973])
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
 pow
 -
+**Description:** Returns a tensor element wise raised to the power of input tensor
 
 ```python
 a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+b=R.Tensor([1,2,3])
+c=R.pow(a,b)
+print(c.output)
 ```
-######Parameters:
+    Output: array([1,4,27])
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
 square
 -
+**Description:** Returns square of a tensor
 
 ```python
 a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+b=R.square(a)
+print(b.output)
 ```
-######Parameters:
+    Output: array([1,4,9])
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
+`Returns:`
 
-######Returns:
 R.Tensor()
 
 ---
 cube
 -
 
+**Description:** Returns cube of a tensor
+
 ```python
 a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+b=R.cube(a)
+print(b.output)
 ```
-######Parameters:
+    Output: array([1,8,27])
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
+`Returns:`
 
-######Returns:
 R.Tensor()
 
 ---
 square_root
 -
 
+**Description:** Returns square root of a tensor
+
 ```python
-a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+a=R.Tensor([16,4,9])
+b=R.square(a)
+print(b.output)
 ```
-######Parameters:
+    Output: array([4,2,3])
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
+`Returns:`
 
-######Returns:
 R.Tensor()
 
 ---
 cube_root
 -
 
+**Description:** Returns cube root of a tensor
+
 ```python
-a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+a=R.Tensor([27,64,729])
+b=R.cube_root(a)
+print(b.output)
 ```
-######Parameters:
+    Output: array([3,4,9])
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
+`Returns:`
 
-######Returns:
 R.Tensor()
 
 ---
 abs
 -
 
+**Description:** Returns absolute value of elements of a tensor
+
 ```python
-a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+a=R.Tensor([1,-2,-3])
+b=R.square(a)
+print(b.output)
 ```
-######Parameters:
+    Output: array([1,2,3])
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
+`Returns:`
 
-######Returns:
 R.Tensor()
 
 ---
 
 
----
 
 
-#Comparision Ops
+
+Comparision Ops
+-
 
 Op name |
 |---|
@@ -373,12 +398,14 @@ print(c.output)
     Output: array([0,1,0])
     
 
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -396,12 +423,14 @@ print(c.output)
 ```
 
     Output: array([0,1,1])
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -418,12 +447,14 @@ print(c.output)
 ```
     Output: array([1,0,0])
 
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 
@@ -445,12 +476,14 @@ print(c.output)
     Output: array([1,0,1])
 
 
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -467,12 +500,14 @@ R.equal(a,b)
 ```
 
     Output: array([0,1,1])
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -490,18 +525,21 @@ print(c.output)
 ```
 
     Output: array([1,0,1])
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
 
 
 Logical Operations
+-
 
 Op name |
 |---|
@@ -522,12 +560,14 @@ c=R.logical_and(a,b)
 print(c.output)
 ```
     Output: array([1,0,0,0])
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -544,12 +584,14 @@ b=R.Tensor([True,False,True,False])
 c=R.logical_or(a,b)
 print(c.output)
 ```
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -564,10 +606,12 @@ c=R.logical_not(a)
 print(c.output)
 ```
     Output: array([False,False,True])
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The input Tensor
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 
@@ -583,17 +627,21 @@ c=R.logical_xor(a,b)
 print(c.output)
 ```
     Output: array([])
-######Parameters:
+
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
 
 Statistical Ops
+-
 
 Op name |
 |---|
@@ -620,12 +668,14 @@ print(c2.output)
     Output: array([[2 , 3.66666675]])
             array([[1.5] , [3. ], [4. ]])
 
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The  input Tensor
 
 **axis (R.Scalar,int ) :** The axis along which to calculate the mean
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 
@@ -643,12 +693,14 @@ print(c.output)
 ```
     Output: array([1])
 
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **axis (R.Scalar, int ) :** The axis along which to calculate the mode
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -665,13 +717,15 @@ print(c.output)
 ```
     Output: array([1.5])
 
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The  input Tensor
 
 **axis (R.Scalar, int ) :** The axis along which to calculate the median
 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -686,13 +740,14 @@ print(c.output)
 ```
     Output: array([1.6])
 
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **axis (R.Scalar, int ) :** The axis along which to calculate the variance
 
+`Returns:`
 
-######Returns:
 R.Tensor()
 
 ---
@@ -707,13 +762,14 @@ print(c.output)
 ```
     Output: 1.1547005383792515
 
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor.
 
 **axis (R.Scalar, int ) :** The axis along which to calculate the standard deviation.
 
+`Returns:`
 
-######Returns:
 R.Tensor()
 
 ---
@@ -729,11 +785,12 @@ R.percentile(a ,value=1)
 print(a.output)
 ```
     Output: 0.3333333334
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The input Tensor
 
+`Returns:`
 
-######Returns:
 R.Tensor()
 
 ---
@@ -741,6 +798,7 @@ R.Tensor()
 
 
 Other Ops
+-
 
 Op name |
 |---|
@@ -785,12 +843,14 @@ c=R.random(a,size=3)
 print(c.output)
 ```
     Output: [6,1,4]
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The input Tensor
 
 **size (int,R.Scalar) :** size of output tensor
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -803,12 +863,16 @@ bincount
 a=R.Tensor([1,2,3])
 
 ```
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
+
 **minlength (R.Scalar,int) :** 
+
 **weights (array) :** 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -825,14 +889,16 @@ c=R.where(a,b,condition=cond)
 print(c.output)
 ```
     Output: array([1,2,-8])
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
 **b (ndarray, list) :** condition ,if true choose from a ,else choose from b.
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -849,10 +915,12 @@ b=R.sign(a)
 print(b.output)
 ```
     Output: array([0,1,-1,-1])
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The  input Tensor
-]
-######Returns:
+
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -867,12 +935,14 @@ b=R.foreach(a, operation='sum')
 print(b.output)
 ```
     Output: array([6,15,21])
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The input Tensor
 
 **operation (str) :** name of the tfjs operation.
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -890,12 +960,14 @@ print(b.output)
     Output: array([0,1,0,0]
                 [0,0,0,1]
                 [0,0,1,0])
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The input Tensor
 
 **depth (R.Tensor| Dtype: Ravop Tensor) :** depth of the one hot representation
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -909,12 +981,14 @@ b=R.Tensor([[3,4],[5,4]])
 R.multiply(a,b)
 ```
     Output: array([[13,12],[39,36]])
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 
@@ -929,12 +1003,14 @@ b=R.Tensor([[3,4],[5,4]])
 R.multiply(a,b)
 ```
     Output: array([[3,8],[15,24]])
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -949,11 +1025,14 @@ R.dot(a,b)
 ```
     Output: array([[13,12],[39,36]])
 
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor
-######Returns:
+
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -970,11 +1049,13 @@ print(b.output)
                 [2,4])
 
 
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The input Tensor
 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -989,12 +1070,14 @@ print(b.output)
 ```
     Output: array([3,7])
 
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor.
 
 **axis (int) :** axis along which to calculate the sum of tensor.
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -1009,10 +1092,12 @@ print(b)
 ```
     Output: array([1,2,4,7])
 
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor.
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -1024,14 +1109,16 @@ split
 a=R.Tensor([[1,2,3,4],[5,6,7,8]])
 R.split(a)
 ```
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The input Tensor
 
 **numOrSizeSplits (int):** number of splits to be made.
 
 **axis (int):** axis along which to be split.
  
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -1045,12 +1132,14 @@ b=R.reshape(a,shape=[4])
 print(b.output)
 ```
     Output:array([1,2,3,4])
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **shape (array,list) :** list denoting the shape of the output tensor 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -1066,14 +1155,17 @@ print(c.output)
 ```
     Output: array([1, 2, 6, 5]
             [3, 4, 7, 8])
-######Parameters:
+
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
 **axis(int):** axis along which to concatenate.
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -1087,11 +1179,14 @@ b=R.min(a)
 print(b.output)
 ```
     Output: 1
-######Parameters:
+
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The input Tensor
 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -1106,11 +1201,13 @@ b=R.max(a)
 print(b.output)
 ```
     Output: 5
-######Parameters:
+
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The input Tensor
 
+`Returns:`
 
-######Returns:
 R.Tensor()
 
 ---
@@ -1124,10 +1221,12 @@ b=R.unique(a)
 print(b.output)
 ```
     Output: array([1,2,3,4])
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The input Tensor
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -1142,12 +1241,14 @@ b=R.argmax(a,axis=1)
 print(b.output)
 ```
     Output:array([2,0])
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The input Tensor
 
 **axis (int):** axis along which to find argmax
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -1161,87 +1262,109 @@ a=R.Tensor([[1,2,3],[2,1,1]])
 b=R.argmin(a,axis=1)
 print(b.output)
 ```
-######Parameters:
+    Output:array([2,0])
+
+
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The input Tensor
-**axis (int):** axis along which to find argmax
+
+**axis (int) :** axis along which to find argmax
 
 
-######Returns:
+`Returns:`
+
 R.Tensor()
 
 ---
 
 expand_dims
 -
-**Description:**
+**Description:** increase the dimension of a tensor by 1. 
 ```python
 a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+b=R.expand_dims(a)
+print(b.output)
 ```
-######Parameters:
-**a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
+    Output:array([[1,2,3]])
 
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
+`Parameters:`
 
-######Returns:
+**a ( R.Tensor | Dtype:Ravop Tensor) :** The first input Tensor
+
+**axis (int) :** axis along which to expand dimension
+
+`Returns:`
+
 R.Tensor()
 
 ---
 
 inv
 -
-**Description:**
+**Description:** outputs the inverse of a matrix tensor
 
 ```python
-a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+a=R.Tensor([[1,2],[3,4]])
+b=R.inv(a)
+print(b.output)
 ```
-######Parameters:
-**a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
+    Output: array([[-2 , 1 ],[1.5,-0.5]])
 
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Parameters:`
+
+**a (R.Tensor| Dtype:Ravop Tensor) :** The input Tensor
+
+`Returns:`
+
 R.Tensor()
 
 ---
 
 gather
 -
-**Description:**
+**Description:** Get the elements of a Tensor by indices
 
 ```python
-a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+a=R.Tensor([1,2,3,4,5,6])
+b=R.Tensor([1,3])
+c=R.gather(a,b)
+print(c.output)
 ```
-######Parameters:
-**a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
+    Output: array([2,4])
 
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
+`Parameters:`
+
+**a (R.Tensor| Dtype:Ravop Tensor) :** The input Tensor
+
+**b (R.Tensor| Dtype: Ravop Tensor) :** The indices Tensor 
+
+`Returns:`
+
 R.Tensor()
 
 ---
 
 reverse
 -
-**Description:**
+**Description:** returns the tensor in reverse order.
 
 ```python
 a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+b=R.reverse(a)
+print(b.output)
 ```
-######Parameters:
-**a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
+    Output: array([3,2,1])
 
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
+`Parameters:`
 
-######Returns:
+**a (R.Tensor| Dtype:Ravop Tensor) :** The  input Tensor
+
+
+`Returns:`
+
 R.Tensor()
 
 ---
@@ -1251,35 +1374,17 @@ stack
 **Description:**
 
 ```python
-a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+a=R.Tensor([[1,2,3],[3,4,5]])
+R.stack(a,b)
 ```
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
 **b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
 
-######Returns:
-R.Tensor()
+`Returns:`
 
----
-
-tile
--
-**Description:**
-
-```python
-a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
-```
-######Parameters:
-**a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
-
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
-
-######Returns:
 R.Tensor()
 
 ---
@@ -1288,51 +1393,63 @@ slice
 -
 
 ```python
-a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+a=R.Tensor([1,2,3,4,5,6])
+b=R.slice(a,begin=2,size=2)
+print(b.output)
 ```
-######Parameters:
+`Parameters:`
+
 **a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
 
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
+**begin (int) :** which index to begin the slice from
 
-######Returns:
+**size (int) :** size of the output tensor.
+
+`Returns:`
+
 R.Tensor()
 
 ---
 
 find_indices
 -
+**Description:** Get the indices of values in a tensor.
 
 ```python
-a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+a=R.Tensor([1,2,2,3,6,6,6,7])
+b=R.find_indices(a,R.Tensor([1,6]))
+print(b.output)
 ```
-######Parameters:
-**a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
+    Output: array([[0],[4,5,6]])
 
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
+`Parameters:`
 
-######Returns:
+**a (R.Tensor| Dtype:Ravop Tensor) :** The  input Tensor
+
+**b (R.Tensor| Dtype: Ravop Tensor) :** The Tensor denoting indices of elements we want
+
+`Returns:`
+
 R.Tensor()
 
 ---
 shape
 -
+**Description:** Get the shape of a Tensor.
 
 ```python
-a=R.Tensor([1,2,3])
-b=R.Tensor([3,4,5])
-R.not_equal(a,b)
+a=R.Tensor([[1,2,3],[4,5,6]])
+b=R.shape(a)
 ```
-######Parameters:
-**a (R.Tensor| Dtype:Ravop Tensor) :** The first input Tensor
+    Output: array([2,3])
 
-**b (R.Tensor| Dtype: Ravop Tensor) :** The second input Tensor 
+`Parameters:`
 
-######Returns:
+**a (R.Tensor| Dtype:Ravop Tensor) :** The input Tensor
+
+
+`Returns:`
+
 R.Tensor()
 
 ---
