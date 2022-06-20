@@ -16,7 +16,7 @@
 Mean absolute error regression loss.
 <u>
 
-### Parameters:<br></u>
+`Parameters:`<br></u>
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
@@ -55,7 +55,7 @@ loss_val = mean_absolute_error(y_true,y_pred)
 </center>
 <u>
 
-### Parameters:<br></u>
+`Parameters:`<br></u>
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
@@ -98,7 +98,7 @@ loss_val = mean_squared_error(y_true,y_pred)
 </center>
 <u>
 
-### Parameters:<br></u>
+`Parameters:`<br></u>
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
@@ -141,7 +141,7 @@ loss_val = root_mean_squared_error(y_true,y_pred)
 </center>
 <u>
 
-### Parameters:<br></u>
+`Parameters:`<br></u>
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
@@ -178,8 +178,7 @@ loss_val = mean_squared_log_error(y_true,y_pred)
 <img src=files/mean_abs_e.png width=250 height= 85>
 </center>
 <u>
-
-### Parameters:<br></u>
+`Parameters:` <br></u>
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
@@ -284,6 +283,7 @@ Estimated target values.
 <h1>
 
 # Huber loss
+
 </h1>
 
 <center>
@@ -292,7 +292,10 @@ Estimated target values.
 
 <u>
 
-### Parameters:<br></u>
+`Parameters:`<br></u>
+
+
+
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
@@ -340,7 +343,7 @@ Estimated target values.
 
 <u>
 
-### Parameters:<br></u>
+`Parameters:`<br></u>
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
@@ -362,7 +365,7 @@ Estimated target values.
 
 
 
-### Parameters:<br>
+`Parameters:`<br>
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
