@@ -65,3 +65,5 @@ algo.end()
 <img src=files/lin_reg.png width=400>
 
 You can view the implementation of Linear Regression [*here*](https://github.com/ravenprotocol/ravml/blob/main/ravml/linear/linear_regression.py).
+
+
