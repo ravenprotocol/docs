@@ -1,22 +1,25 @@
-<center><b>
+<div align='center'><b>
 <h1>
 
 # Loss functions
 </h1>
-</center></b>
+</div align></b>
 
 ### loss functions in ravml written using the ravop library compute the different loss values.
 
-<center>
+<div align='center'>
 
 # mean_absolute_error
 
-</center>
+</div align>
 
 Mean absolute error regression loss.
-<u>
 
-`Parameters:`<br></u>
+<div align='center'>
+<img src=files/mean_abs_e.png width=250 height= 85>
+</div align>
+
+`Parameters:`<br>
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
@@ -24,35 +27,33 @@ Ground truth (correct) target values.
 Estimated target values.
 
 
-<u>
-
-### Returns:<br></u>
+`Returns:`<br>
 >Ravop Tensor Object.
 
 <br>
-<center>
-<img src=files/mean_abs_e.png width=250 height= 85>
-</center>
 
-Usage:
+
+`Usage:`
  ```python
 from ravml.losses import mean_absolute_error
-''' y_true and y_pred '''
+# y_true : actual y true labels.
+# y_pred : prediction values from our model.
 
 loss_val = mean_absolute_error(y_true,y_pred)
 ''' returns a ravop tensor object ''' 
  ```
 
 
-<center>
+<div align='center'>
 
 # mean_squared_error
-</center>
+</div align>
 
+    Mean squared error(MSE) measures the mean of the squared error 
 
-<center>
+<div align='center'>
 <img src=files/meansquarederror.png width=250 height= 75>
-</center>
+</div align>
 <u>
 
 `Parameters:`<br></u>
@@ -62,58 +63,54 @@ Ground truth (correct) target values.
 ><i><b>y_pred</b></i> : array-like of shape (n_samples,) or (n_samples, n_outputs)
 Estimated target values.
 
-### Returns:<br></u>
+`Returns:`<br></u>
 >Ravop Tensor Object.
 
 <br>    
 
+`Usage:`
+
  ```python
 from ravml.losses import mean_squared_error
-'''
-y_true and y_pred
-'''
+
+# y_true : actual y true labels.
+# y_pred : prediction values from our model.
 
 loss_val = mean_squared_error(y_true,y_pred)
 ''' returns a ravop tensor object ''' 
  ```
 
-
 <br><br>
 
-
-
-
-
-
-
-<center>
+<div align='center'>
 
 # root_mean_squared_error
-</center>
-
+</div align>
 
     description of rmse
-<center>
+<div align='center'>
 <img src=files/rootmeansquarederror.png width=250 height= 85>
-</center>
-<u>
+</div align>
 
-`Parameters:`<br></u>
+
+
+`Parameters:`<br>
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
 ><i><b>y_pred</b></i> : array-like of shape (n_samples,) or (n_samples, n_outputs)
 Estimated target values.
     
-### Returns:<br></u>
+`Returns:`<br>
 >Ravop Tensor Object.
 
+`Usage:`<br>
 
  ```python
 from ravml.losses import root_mean_squared_error
-'''
-y_true and y_pred
-'''
+
+# y_true : actual y true labels.
+# y_pred : prediction values from our model.
 
 loss_val = root_mean_squared_error(y_true,y_pred)
 ''' returns a ravop tensor object ''' 
@@ -130,25 +127,25 @@ loss_val = root_mean_squared_error(y_true,y_pred)
 
 
 
-<center>
+<div align='center'>
 
 # mean_squared_log_error
-</center>
+</div align>
     
 
-<center>
+<div align='center'>
 <img src=files/rmsle.png width=250 height= 85>
-</center>
-<u>
+</div align>
 
-`Parameters:`<br></u>
+
+`Parameters:`<br>
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
 ><i><b>y_pred</b></i> : array-like of shape (n_samples,) or (n_samples, n_outputs)
 Estimated target values.
 
-### Returns:<br></u>
+`Returns:`<br>
 >Ravop Tensor Object.
 
  ```python
@@ -168,23 +165,25 @@ loss_val = mean_squared_log_error(y_true,y_pred)
 
 <br><br>
 
-<center>
+<div align='center'>
 
 # log_loss
-</center>
+</div align>
 
     description of log loss
-<center>
+<div align='center'>
 <img src=files/mean_abs_e.png width=250 height= 85>
-</center>
-<u>
-`Parameters:` <br></u>
+</div align>
+
+
+`Parameters:` <br>
+
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
 ><i><b>y_pred</b></i> : array-like of shape (n_samples,) or (n_samples, n_outputs)
 
-### Returns:<br></u>
+`Returns:`<br></u>
 >Ravop Tensor Object.
 
 
@@ -194,19 +193,19 @@ Ground truth (correct) target values.
 
 
 
-<center>
+<div align='center'>
 
 # one_hot_cross_entropy
-</center>
+</div align>
 
     description of  one hot cross entropy
 
-<center>
+<div align='center'>
 <img src=files/mean_abs_e.png width=250 height= 85>
-</center>
-<u>
+</div align>
 
-### Parameters:<br></u>
+
+`Parameters:`<br>
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
@@ -214,7 +213,7 @@ Ground truth (correct) target values.
 Estimated target values.
 
 
-### Returns:<br></u>
+`Returns:`<br>
 >Ravop Tensor Object.
 
 <br><br>
@@ -224,15 +223,15 @@ Estimated target values.
 
 
 
-<center>
+<div align='center'>
 
 # sparse_cross_entropy
-</center>
+</div align>
     description of 
 
-<center>
+<div align='center'>
 <img src=files/mean_abs_e.png width=250 height= 85>
-</center>
+</div align>
 
 <u>
 
@@ -255,14 +254,14 @@ Estimated target values.
 
 
 
-<center>
+<div align='center'>
 
 # categorical_hinge
-</center>
+</div align>
 
-<center>
+<div align='center'>
 <img src=files/mean_abs_e.png width=250 height= 85>
-</center>
+</div align>
 <u>
 
 ### Parameters:<br></u>
@@ -286,9 +285,9 @@ Estimated target values.
 
 </h1>
 
-<center>
+<div align='center'>
 <img src=files/mean_abs_e.png width=250 height= 85>
-</center>
+</div align>
 
 <u>
 
