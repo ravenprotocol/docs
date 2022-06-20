@@ -150,12 +150,13 @@ Estimated target values.
 
  ```python
 from ravml.losses import mean_squared_log_error
-'''
-y_true and y_pred
-'''
+# y_true : actual y true labels.
+# y_pred : prediction values from our model.
 
 loss_val = mean_squared_log_error(y_true,y_pred)
 ''' returns a ravop tensor object ''' 
+
+print('loss value:',loss_val())
  ```
 
 
@@ -227,22 +228,23 @@ Estimated target values.
 
 # sparse_cross_entropy
 </div align>
+    
     description of 
 
 <div align='center'>
 <img src=files/mean_abs_e.png width=250 height= 85>
 </div align>
 
-<u>
 
-### Parameters:<br></u>
+
+`Parameters:`<br>
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
 ><i><b>y_pred</b></i> : array-like of shape (n_samples,) or (n_samples, n_outputs)
 Estimated target values.
 
-### Returns:<br></u>
+`Returns:`<br>
 >Ravop Tensor Object.
 
 <br><br>
@@ -259,12 +261,17 @@ Estimated target values.
 # categorical_hinge
 </div align>
 
-<div align='center'>
-<img src=files/mean_abs_e.png width=250 height= 85>
-</div align>
-<u>
 
-### Parameters:<br></u>
+    calculates the categorical hinge loss between y_true and y_pred.
+
+categorical hinge is formulated as :
+<div align='center'>
+<img src=files/hinge_loss.png width=350 height= 65>
+</div align>
+
+
+`Parameters:`<br>
+
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
@@ -272,26 +279,43 @@ Ground truth (correct) target values.
 Estimated target values.
     description of mse
 
-### Returns:<br></u>
+`Returns:`<br>
 >Ravop Tensor Object.
+
+
+`Usage:`
+<br>
+
+ ```python
+from ravml.losses import categorical_hinge
+# y_true : actual y true labels.
+# y_pred : prediction values from our model.
+
+loss_val = categorical_hinge(y_true,y_pred)
+''' returns a ravop tensor object ''' 
+
+print('loss value:',loss_val())
+ ```
+
 
 <br><br>
 
-
-
-<h1>
+<div align='center'>
 
 # Huber loss
+</div>
 
-</h1>
+
+
+Huber loss is formulated as:
 
 <div align='center'>
-<img src=files/mean_abs_e.png width=250 height= 85>
+<img src=files/huber_loss.png width=350 height= 85>
 </div align>
 
-<u>
 
-`Parameters:`<br></u>
+
+`Parameters:`<br>
 
 
 
@@ -302,63 +326,62 @@ Ground truth (correct) target values.
 Estimated target values.
     description of mse
 
-
-### Returns:<br></u>
+`Returns:`<br>
 >Ravop Tensor Object.
 
 <br><br>
 
 
 
-<h1>
+
+<div align='center'>
 
 # KL_div_loss
-</h1>
-    description of 
+</div>
+    
+    The Kullback-Leibler divergence loss.
+    
 
-
-<u>
-
-### Parameters:<br></u>
+`Parameters:`<br>
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
 ><i><b>y_pred</b></i> : array-like of shape (n_samples,) or (n_samples, n_outputs)
 Estimated target values.
 
-### Returns:<br>
+`Returns:`<br>
 >Ravop Tensor Object.
 
 <br><br>
 
 
 
-<h1>
+<div align='center'>
 
 # Poisson_loss
-</h1>
+</div>
 
 
 
-<u>
-
-`Parameters:`<br></u>
+`Parameters:`<br>
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
 Ground truth (correct) target values.
 
 ><i><b>y_pred</b></i> : array-like of shape (n_samples,) or (n_samples, n_outputs)
 Estimated target values.
 
-### Returns:<br></u>
+`Returns:`<br>
 >Ravop Tensor Object.
 
 <br><br>
 
 
-<u>
-<h1>
 
-# Logcosh </u></h1>
+
+<div align='center'>
+
+# Logcosh 
+</div>
 
 
 
@@ -371,7 +394,7 @@ Ground truth (correct) target values.
 ><i><b>y_pred</b></i> : array-like of shape (n_samples,) or (n_samples, n_outputs)
 Estimated target values.
  
-### Returns:<br></u>
+`Returns:`<br>
 >Ravop Tensor Object.
 
 <br><br>
