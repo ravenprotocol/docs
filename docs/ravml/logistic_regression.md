@@ -79,8 +79,6 @@ This class implements regularized logistic regression. Note that regularization 
 >| Parameters | Description     |
 >| :------------: |:---------------:|
 >|    X {dtype:list/numpy_ndarray,shape:(n_samples,n_features)} | array like matrix denoting the input array for training | 
->|    y {dtype:list/numpy_ndarray,shape:(n_samples)} | array like matrix the input classes | 
-
 
 
 

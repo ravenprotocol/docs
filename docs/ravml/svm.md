@@ -7,7 +7,7 @@ obj = SVM_classifier( learning_rate =0.01
          ,lamda_param=0.05
          ,gamma=0.2
          ,C=None
-         ,coefficeint=None
+         ,coefficient=None
          ,degree=1
          ,n_iterations=20
          ,kernel='rbf')

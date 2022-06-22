@@ -3,7 +3,7 @@
 # <B> K-Nearest Neighbours </B>
 </center>
 
-K-Nearest Neighbors (KNN) is a simple machine learning technique for regression and classification problems. KNN algorithms take data and apply similarity metrics to classify fresh data points (e.g. distance function). A majority vote of its neighbours is used to classify it. The information is assigned to the class with the most neighbours. As the number of nearest neighbours grows, so does the value of k, and so does the accuracy.
+K-Nearest Neighbours (KNN) is a simple machine learning technique for regression and classification problems. KNN algorithms take data and apply similarity metrics to classify fresh data points (e.g. distance function). A majority vote of its neighbours is used to classify it. The information is assigned to the class with the most neighbours. As the number of nearest neighbours grows, so does the value of k, and so does the accuracy.
 
 
 

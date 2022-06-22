@@ -171,11 +171,13 @@ print('loss value:',loss_val())
 # log_loss
 </div align>
 
-    description of log loss
-<div align='center'>
-<img src=files/mean_abs_e.png width=250 height= 85>
-</div align>
+    Ravml implementation of the log loss function.
 
+    
+<div align='center'>
+<img src=files/logloss.png width=280 height= 85>
+</div align>
+<br>
 
 `Parameters:` <br>
 
@@ -187,6 +189,15 @@ Ground truth (correct) target values.
 `Returns:`<br></u>
 >Ravop Tensor Object.
 
+`Usage:`
+ ```python
+from ravml.losses import log_loss
+# y_true : actual y true labels.
+# y_pred : prediction values from our model.
+
+loss_val = log_loss(y_true,y_pred)
+''' returns a ravop tensor object ''' 
+ ```
 
 <br><br>
 
@@ -202,9 +213,9 @@ Ground truth (correct) target values.
     description of  one hot cross entropy
 
 <div align='center'>
-<img src=files/mean_abs_e.png width=250 height= 85>
+<img src=files/cross_entropy.png width=250 height= 45>
 </div align>
-
+<br>
 
 `Parameters:`<br>
 ><b><i>y_true</i></b>: array-like of shape (n_samples,) or (n_samples, n_outputs)
@@ -216,6 +227,16 @@ Estimated target values.
 
 `Returns:`<br>
 >Ravop Tensor Object.
+
+`Usage:`
+ ```python
+from ravml.losses import one_hot_cross_entropy
+# y_true : actual y true labels.
+# y_pred : prediction values from our model.
+
+loss_val = one_hot_cross_entropy(y_true,y_pred)
+''' returns a ravop tensor object ''' 
+ ```
 
 <br><br>
 
@@ -232,7 +253,7 @@ Estimated target values.
     description of 
 
 <div align='center'>
-<img src=files/mean_abs_e.png width=250 height= 85>
+<img src=files/spe.png width=250 height= 85>
 </div align>
 
 
@@ -247,12 +268,17 @@ Estimated target values.
 `Returns:`<br>
 >Ravop Tensor Object.
 
+`Usage:`
+ ```python
+from ravml.losses import sparse_cross_entropy
+# y_true : actual y true labels.
+# y_pred : prediction values from our model.
+
+loss_val = sparse_cross_entropy(y_true,y_pred)
+''' returns a ravop tensor object ''' 
+ ```
+
 <br><br>
-
-
-
-
-
 
 
 
@@ -280,6 +306,7 @@ Estimated target values.
     description of mse
 
 `Returns:`<br>
+
 >Ravop Tensor Object.
 
 
@@ -324,10 +351,22 @@ Ground truth (correct) target values.
 
 ><i><b>y_pred</b></i> : array-like of shape (n_samples,) or (n_samples, n_outputs)
 Estimated target values.
-    description of mse
+
+><i><b>d</b></i> : int value, d-value for the huber loss
 
 `Returns:`<br>
 >Ravop Tensor Object.
+
+`Usage:`
+ ```python
+from ravml.losses import huber
+# y_true : actual y true labels.
+# y_pred : prediction values from our model.
+
+loss_val = huber(y_true,y_pred)
+''' returns a ravop tensor object ''' 
+ ```
+
 
 <br><br>
 
@@ -352,6 +391,16 @@ Estimated target values.
 `Returns:`<br>
 >Ravop Tensor Object.
 
+`Usage:`
+ ```python
+from ravml.losses import KL_div_loss
+# y_true : actual y true labels.
+# y_pred : prediction values from our model.
+
+loss_val = KL_div_loss(y_true,y_pred)
+''' returns a ravop tensor object ''' 
+ ```
+
 <br><br>
 
 
@@ -373,7 +422,18 @@ Estimated target values.
 `Returns:`<br>
 >Ravop Tensor Object.
 
+`Usage:`
+ ```python
+from ravml.losses import poisson_loss
+# y_true : actual y true labels.
+# y_pred : prediction values from our model.
+
+loss_val = poisson_loss(y_true,y_pred)
+''' returns a ravop tensor object ''' 
+ ```
+
 <br><br>
+
 
 
 
@@ -382,9 +442,6 @@ Estimated target values.
 
 # Logcosh 
 </div>
-
-
-
 
 
 `Parameters:`<br>
@@ -398,3 +455,13 @@ Estimated target values.
 >Ravop Tensor Object.
 
 <br><br>
+
+`Usage:`
+ ```python
+from ravml.losses import logcosh
+# y_true : actual y true labels.
+# y_pred : prediction values from our model.
+
+loss_val = logcosh(y_true,y_pred)
+''' returns a ravop tensor object ''' 
+ ```
